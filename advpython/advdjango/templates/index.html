@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+<h1>Amir Savvy, Template Base Index Page</h1>
+<h3>My Full Name: {{ name }}</h3>
+
+<h3><a href="{% url 'website:list' %}">Schools</a></h3>
+<h3><a href="{% url 'admin:index' %}">Admin</a></h3>
+{% endblock %}

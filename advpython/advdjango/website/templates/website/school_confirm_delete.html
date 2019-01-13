@@ -1,0 +1,13 @@
+{% extends "website/website_base.html" %}
+
+{% block body_block %}
+
+<h1>Delete {{school.name}} ?</h1>
+<form method="post">
+{% csrf_token %}
+<input type="submit" name="" value="Delete" class="btn btn-danger">
+<a href="{% url 'website:list' %}">Cancel</a>
+
+</form>
+
+{% endblock %}

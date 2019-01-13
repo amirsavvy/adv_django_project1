@@ -1,0 +1,28 @@
+{% extends 'website/website_base.html' %}
+
+
+{% block body_block %}
+<div class="container">
+  <div class="row">
+<h1>Welcome to School Details Page</h1>
+<h2>School Name: {{school_detail.name}}</h2>
+<h2>School principal: {{school_detail.principal}}</h2>
+<h2>School Location: {{school_detail.location}}</h2>
+
+<h1>This School has following students</h1>
+
+{% for student in school_detail.student_set.all %}
+  <h3>{{student.name}} who is {{student.age}} years old.</h3>
+{% endfor %}
+</div>
+
+<div class="row">
+<a class="btn btn-warning" href="{% url 'website:update' pk=school_detail.pk %}">
+  Update School</a>
+</div>
+<a class="btn btn-danger" href="{% url 'website:delete' pk=school_detail.pk %}">
+  Delete School</a>
+</div>
+
+</div>
+{% endblock %}
